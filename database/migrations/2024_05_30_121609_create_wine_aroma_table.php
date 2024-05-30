@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('wine_aroma', function (Blueprint $table) {
             $table->unsignedBigInteger('wine_id');
-            // foreign key constraint
-            $table->foreign('wine_id')->references('id')->on('wines')->onDelete('cascade');
+
+            //foreign key
+            $table->foreign('wine_id')->references('id')->on('wines')->cascadeOnDelete();
 
             $table->unsignedBigInteger('aroma_id');
-            // foreign key constraint
-            $table->foreign('aroma_id')->references('id')->on('aromas')->onDelete('cascade');
+
+            //foreign key
+            $table->foreign('aroma_id')->references('id')->on('aromas')->cascadeOnDelete();
         });
     }
 
