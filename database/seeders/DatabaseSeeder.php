@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             UserTableSeeder::class,
             WinesTableSeeder::class,
             AromasTableSeeder::class,
-            AromaWineTableSeeder::class
+            AromaWineTableSeeder::class,
+            WineryTableSeeder::class
         ]);
     }
 }
