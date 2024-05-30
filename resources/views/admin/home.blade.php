@@ -4,7 +4,7 @@
 
 <div class="container my-5 ">
     <div class="row row-cols-4">
-        @foreach ($wines as $wine )
+        @foreach ( $wines as $wine )
         <div class="col mb-3">
             <div class="card d-flex justify-content-center align-items-center" style="min-height: 590px;">
                 <img src="{{ $wine->image }}" class="" alt="{{ $wine->wine }}" style="max-width: 100px;">

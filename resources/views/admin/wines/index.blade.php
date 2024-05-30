@@ -26,10 +26,10 @@
               <td>{{ $wine->location }}</td>
               <td>
                 <div class="d-flex">
-                    <a href="{{ route('wines.edit', $wine->id) }}"><div class="btn btn-warning me-2"><i class="fa-solid fa-pen-to-square"></i></div></a>
+                    <a href="{{ route('admin.wines.edit', $wine->id) }}"><div class="btn btn-warning me-2"><i class="fa-solid fa-pen-to-square"></i></div></a>
                     <form
                         class="d-inline"
-                        action="{{ route('wines.destroy', $wine->id) }}"
+                        action="{{ route('admin.wines.destroy', $wine->id) }}"
                         method="POST"
                         onsubmit="return confirm('Sei sicuro di vole eliminare \'{{ $wine->wine }}\'?')"
                     >

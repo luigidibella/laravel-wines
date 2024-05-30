@@ -16,7 +16,7 @@ class WineController extends Controller
     public function index()
     {
         $wines = Wine::orderByDesc('id')->get();
-        return view('wines.index', compact('wines'));
+        return view('admin.wines.index', compact('wines'));
     }
 
     /**
@@ -24,7 +24,7 @@ class WineController extends Controller
      */
     public function create()
     {
-        return view('wines.create');
+        return view('admin.wines.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class WineController extends Controller
         /* dd($new_wine); */
         $new_wine->save();
 
-        return redirect()->route('wines.index', $new_wine);
+        return redirect()->route('admin.wines.index', $new_wine);
     }
 
     /**
@@ -56,7 +56,7 @@ class WineController extends Controller
      */
     public function edit(Wine $wine)
     {
-        return view('wines.edit', compact('wine'));
+        return view('admin.wines.edit', compact('wine'));
     }
 
     /**
@@ -74,7 +74,7 @@ class WineController extends Controller
 
         $wine->update($form_data);
 
-        return redirect()->route('wines.index', $wine);
+        return redirect()->route('admin.wines.index', $wine);
     }
 
     /**
@@ -84,7 +84,7 @@ class WineController extends Controller
     {
         $wine->delete();
 
-        return redirect()->route('wines.index')->with('deleted', 'Il progetto' . ' "' . $wine->wine . '" ' . 'è stato eliminato.');
+        return redirect()->route('admin.wines.index')->with('deleted', 'Il progetto' . ' "' . $wine->wine . '" ' . 'è stato eliminato.');
 
     }
 }
