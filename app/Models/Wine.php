@@ -11,7 +11,7 @@ class Wine extends Model
 
     public function aromas()
     {
-        return $this->belongsToMany(aroma::class);
+        return $this->belongsToMany(Aroma::class);
     }
 
 
