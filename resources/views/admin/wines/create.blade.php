@@ -1,11 +1,11 @@
-@extends('layout.main')
+@extends('layouts.admin')
 
 @section('content')
 
 <div class="container" style="height: calc(100vh - 88px - 40px);">
     <h1>Aggiungi vino</h1>
 
-    <form action="{{ route('wines.store')}}" method="POST">
+    <form action="{{ route('admin.wines.store')}}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="winery" class="form-label">Cantina (*)</label>

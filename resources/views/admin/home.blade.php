@@ -21,8 +21,10 @@
     </div>
 </div>
 
-<div class="container">
+{{-- <div class="container">
     {{$wines->links()}}
-</div>
+</div> --}}
+
+{{ $wines->links('pagination::bootstrap-5') }}
 
 @endsection
