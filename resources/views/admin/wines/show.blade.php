@@ -1,7 +1,20 @@
 @extends('layouts.admin')
 
 @section('content')
-
-    <h1>Questo è lo show</h1>
-
+    <div class="container my-5 ">
+        <div class="row row-cols-4">
+            <div class="col mb-3">
+                <div class="card d-flex justify-content-center align-items-center" style="min-height: 590px;">
+                    <img src="{{ $wine->image }}" class="" alt="{{ $wine->wine }}" style="max-width: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ $wine->wine }}</h5>
+                        <p class="card-text">{{ $wine->winery }}</p>
+                        <p class="card-text">{{ $wine->location }}</p>
+                        <p class="card-text">{{ $wine->average }}</p>
+                        <p class="card-text">{{ $wine->reviews }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
