@@ -7,15 +7,23 @@ use Illuminate\Database\Seeder;
 use App\Models\Aroma;
 use App\Models\Wine;
 
-class WineAromaTableSeeder extends Seeder
+class AromaWineTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        foreach (Wine::all() as $wine) {
-            $wine->aromas()->attach(Aroma::all()->random(3));
+
+        for ($i = 0; $i < 200; $i++) {
+
+            $wine = Wine::inRandomOrder()->first();
+
+            $aroma_id = Aroma::inRandomOrder()->first()->id;
+
+
+            $wine->aromas()->attach($aroma_id);
+
         }
     }
 }
