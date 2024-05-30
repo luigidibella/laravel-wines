@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('wine_aroma', function (Blueprint $table) {
+        Schema::create('aroma_wine', function (Blueprint $table) {
             $table->unsignedBigInteger('wine_id');
 
             //foreign key
