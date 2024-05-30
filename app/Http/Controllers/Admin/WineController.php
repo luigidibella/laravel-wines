@@ -16,7 +16,7 @@ class WineController extends Controller
      */
     public function index()
     {
-        $wines = Wine::orderByDesc('id')->get();
+        $wines = Wine::orderByDesc('id')->paginate(25);
         return view('admin.wines.index', compact('wines'));
     }
 

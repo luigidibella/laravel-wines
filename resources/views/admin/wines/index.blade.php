@@ -1,19 +1,20 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
+
+    <div class="container my-3">
         <h1>Lista vini</h1>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">winery</th>
-                    <th scope="col">wine</th>
-                    <th scope="col">average</th>
-                    <th scope="col">reviews</th>
-                    <th scope="col">location</th>
-                    <th scope="col">aromas</th>
-                    <th scope="col">action</th>
+                    <th scope="col" class="text-capitalize">winery</th>
+                    <th scope="col" class="text-capitalize">wine</th>
+                    <th scope="col" class="text-capitalize">average</th>
+                    <th scope="col" class="text-capitalize">reviews</th>
+                    <th scope="col" class="text-capitalize">location</th>
+                    <th scope="col" class="text-capitalize">aromas</th>
+                    <th scope="col" class="text-capitalize">action</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,13 +26,11 @@
                         <td>{{ $wine->reviews }}</td>
                         <td>{{ $wine->location }}</td>
                         <td>
-                        @forelse ($wine->aromas as $aroma)
-                        <a href="{{ route('admin.aromaWines' , $aroma) }}"><span class="badge text-bg-primary">{{ $aroma->name }}</span></a>
-                        @empty
-                            ---
-                        @endforelse
-
-
+                            @forelse ($wine->aromas as $aroma)
+                                <a href="{{ route('admin.aromaWines' , $aroma) }}"><span class="badge text-bg-primary">{{ $aroma->name }}</span></a>
+                            @empty
+                                ---
+                            @endforelse
                         </td>
                         <td>
                             <div class="d-flex">
@@ -50,5 +49,6 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $wines->links('pagination::bootstrap-5') }}
     </div>
 @endsection
