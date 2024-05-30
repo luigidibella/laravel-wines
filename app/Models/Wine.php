@@ -14,6 +14,11 @@ class Wine extends Model
         return $this->belongsToMany(Aroma::class);
     }
 
+    public function winery()
+    {
+        return $this->belongsTo(Winery::class);
+    }
+
 
     protected $fillable = [
         'winery',
