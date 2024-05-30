@@ -13,4 +13,7 @@ class aroma extends Model
     {
         return $this->belongsToMany(wine::class);
     }
+    protected $fillable = [
+        'name',
+    ];
 }
