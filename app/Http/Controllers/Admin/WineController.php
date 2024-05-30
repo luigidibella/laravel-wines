@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Wine;
+use App\Models\Aroma;
 use App\Functions\Helper as Help;
 use App\Http\Requests\WineRequest;
 
@@ -17,6 +18,11 @@ class WineController extends Controller
     {
         $wines = Wine::orderByDesc('id')->get();
         return view('admin.wines.index', compact('wines'));
+    }
+
+    public function aromaWines(Aroma $aroma){
+        $wines = $aroma->wines;
+        return view('admin.wines.index', compact('wines', 'aroma'));
     }
 
     /**

@@ -24,7 +24,15 @@
                         <td>{{ $wine->average }}</td>
                         <td>{{ $wine->reviews }}</td>
                         <td>{{ $wine->location }}</td>
-                        <td>{{ $wine->aromas }}</td>
+                        <td>
+                        @forelse ($wine->aromas as $aroma)
+                        <a href="{{ route('admin.aromaWines' , $aroma) }}"><span class="badge text-bg-primary">{{ $aroma->name }}</span></a>
+                        @empty
+                            ---
+                        @endforelse
+
+
+                        </td>
                         <td>
                             <div class="d-flex">
                                 <a href="{{ route('admin.wines.edit', $wine->id) }}">
