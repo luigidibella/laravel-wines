@@ -49,6 +49,6 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $wines->links('pagination::bootstrap-5') }}
+        {{-- {{ $wines->links('pagination::bootstrap-5') }} --}}
     </div>
 @endsection
